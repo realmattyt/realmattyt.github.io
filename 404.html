@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Redirecting…</title>
+  <script>
+    (function () {
+      // Map of lower-cased first path segment -> canonical (correct-case) repo path.
+      // GitHub Pages routing is case-sensitive, so any case variation of these
+      // names would otherwise 404. Add more entries here as needed.
+      var REDIRECTS = {
+        "bfmdebrieftool": "BFMDebriefTool"
+      };
+
+      var loc = window.location;
+      // Strip leading slash(es), then split into path segments.
+      var path = loc.pathname.replace(/^\/+/, "");
+      var segments = path.split("/");
+      var first = segments[0] || "";
+      var canonical = REDIRECTS[first.toLowerCase()];
+
+      // Redirect only when the first segment matches a known repo by name but
+      // not by case. The `first !== canonical` guard prevents redirect loops.
+      if (canonical && first !== canonical) {
+        segments[0] = canonical;
+        loc.replace("/" + segments.join("/") + loc.search + loc.hash);
+      }
+    })();
+  </script>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; max-width: 40rem; margin: 4rem auto; padding: 0 1rem; line-height: 1.5; color: #1f2328; }
+    h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+    a { color: #0969da; }
+  </style>
+</head>
+<body>
+  <h1>404 — Page not found</h1>
+  <p>If you were looking for the BFM Debrief Tool, you'll be redirected automatically.
+  Otherwise, <a href="/">return to the homepage</a>.</p>
+</body>
+</html>

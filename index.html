@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JoJo — flyjojo.com</title>
+  <meta name="description" content="Personal site of JoJo. About me and my projects, including the BFM Debrief Tool.">
+
+  <!-- Open Graph / social preview -->
+  <meta property="og:title" content="JoJo — flyjojo.com">
+  <meta property="og:description" content="About me and my projects.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://flyjojo.com/">
+
+  <style>
+    :root {
+      --bg: #0b1220;
+      --bg-soft: #111a2e;
+      --card: #15203a;
+      --border: #24314f;
+      --text: #e6ecf5;
+      --muted: #9fb0cc;
+      --accent: #4f9cff;
+      --accent-soft: rgba(79, 156, 255, 0.12);
+      --radius: 14px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: radial-gradient(1200px 600px at 70% -10%, #1a2747 0%, var(--bg) 55%) no-repeat, var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .wrap { max-width: 760px; margin: 0 auto; padding: 0 1.25rem; }
+
+    /* Header / hero */
+    header.hero {
+      padding: 5.5rem 0 3rem;
+      text-align: center;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-soft);
+      border: 1px solid var(--border);
+      padding: 0.35rem 0.8rem;
+      border-radius: 999px;
+      margin-bottom: 1.25rem;
+    }
+    header.hero h1 {
+      font-size: clamp(2.2rem, 6vw, 3.4rem);
+      line-height: 1.1;
+      margin: 0 0 0.75rem;
+      letter-spacing: -0.02em;
+    }
+    header.hero p.tagline {
+      font-size: 1.15rem;
+      color: var(--muted);
+      margin: 0 auto;
+      max-width: 38rem;
+    }
+
+    /* Sections */
+    section { padding: 2.25rem 0; }
+    section h2 {
+      font-size: 1.5rem;
+      margin: 0 0 1rem;
+      letter-spacing: -0.01em;
+    }
+    section p { color: var(--text); }
+    .lead { color: var(--muted); }
+
+    /* Project cards */
+    .projects { display: grid; gap: 1rem; }
+    .card {
+      display: block;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.35rem 1.5rem;
+      transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+    }
+    .card:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent);
+      background: var(--bg-soft);
+      text-decoration: none;
+    }
+    .card h3 {
+      margin: 0 0 0.35rem;
+      font-size: 1.2rem;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .card h3 .arrow { color: var(--accent); transition: transform 0.15s ease; }
+    .card:hover h3 .arrow { transform: translateX(3px); }
+    .card p { margin: 0; color: var(--muted); font-size: 0.97rem; }
+
+    /* Footer */
+    footer {
+      padding: 2.5rem 0 3.5rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+      border-top: 1px solid var(--border);
+      margin-top: 1.5rem;
+    }
+    .links { display: flex; gap: 1.25rem; justify-content: center; flex-wrap: wrap; margin-bottom: 0.75rem; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <header class="hero">
+      <span class="badge">flyjojo.com</span>
+      <!-- EDIT: your name / callsign -->
+      <h1>Hi, I'm JoJo</h1>
+      <!-- EDIT: one-line tagline -->
+      <p class="tagline">Aviator and builder of useful tools.</p>
+    </header>
+
+    <main>
+      <section id="about">
+        <h2>About me</h2>
+        <!-- EDIT: write a couple sentences about yourself. -->
+        <p class="lead">
+          I'm passionate about aviation and air combat tactics, and I build
+          small tools that make training and debriefing easier. This site is
+          home base for the things I make.
+        </p>
+      </section>
+
+      <section id="projects">
+        <h2>Projects</h2>
+        <div class="projects">
+          <a class="card" href="/BFMDebriefTool/">
+            <h3>BFM Debrief Tool <span class="arrow">→</span></h3>
+            <p>A tool for reviewing and debriefing Basic Fighter Maneuvers engagements.</p>
+          </a>
+          <!-- Add more projects by copying the card above. -->
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="links">
+        <a href="https://github.com/realmattyt">GitHub</a>
+        <!-- EDIT/ADD: other links, e.g. <a href="mailto:you@example.com">Email</a> -->
+      </div>
+      <div>&copy; <span id="year"></span> JoJo &middot; flyjojo.com</div>
+    </footer>
+
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
